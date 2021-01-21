@@ -37552,7 +37552,245 @@ OptForm.Text = function OptFormText(_ref4) {
 
   return /*#__PURE__*/_react.default.createElement(_optForm.Text, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/opt-form":"src/components/opt-form/styles/opt-form.js"}],"src/components/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/opt-form":"src/components/opt-form/styles/opt-form.js"}],"src/components/header/styles/header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    height: 32px;\n    width: 108px;\n    margin-right: 40px;\n    @media (min-width: 1449px) {\n        height: 45px;\n        width: 167px;\n    }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    display: block;\n    background-color: #e50914;\n    width: 84px;\n    height: fit-content;\n    color: white;\n    border: 0;\n    font-size: 15px;\n    border-radius: 3px;\n    padding: 8px 17px;\n    cursor: pointer;\n    text-decoration: none;\n    box-sizing: border-box;\n    &:hover {\n        background: #f40612;\n    }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    color: #fff;\n    text-decoration: none;\n    margin-right: 30px;\n    font-weight: ", ";\n    cursor: pointer;\n    &:hover {\n        font-weight: bold;\n    }\n    &:last-of-type {\n        margin-right: 0;\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    margin: 0 56px;\n    height: 64px;\n    padding: 18px 0;\n    justify-content: space-between;\n    align-items: center;\n    a {\n        display: flex;\n    }\n    @media (max-width: 1000px) {\n        margin: 0 30px;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    background: url(", ") top left / cover no-repeat;\n    @media (max-width: 1100px) {\n        ", "\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Background = _styledComponents.default.section(_templateObject(), function (_ref) {
+  var src = _ref.src;
+  return src ? "../images/misc/".concat(src, ".jpg") : '../images/misc/home-bg.jpg';
+}, function (_ref2) {
+  var dontShowOnSmallViewPort = _ref2.dontShowOnSmallViewPort;
+  return dontShowOnSmallViewPort && "background: none;";
+});
+
+exports.Background = Background;
+
+var Container = _styledComponents.default.div(_templateObject2());
+
+exports.Container = Container;
+
+var Link = _styledComponents.default.p(_templateObject3(), function (_ref3) {
+  var active = _ref3.active;
+  return active === 'true' ? '700' : 'normal';
+});
+
+exports.Link = Link;
+var ButtonLink = (0, _styledComponents.default)(_reactRouterDom.Link)(_templateObject4());
+exports.ButtonLink = ButtonLink;
+
+var Logo = _styledComponents.default.img(_templateObject5());
+
+exports.Logo = Logo;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/components/header/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Header;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _header = require("./styles/header");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Header(_ref) {
+  var _ref$bg = _ref.bg,
+      bg = _ref$bg === void 0 ? true : _ref$bg,
+      children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ["bg", "children"]);
+
+  return bg ? /*#__PURE__*/_react.default.createElement(_header.Background, restProps, children) : children;
+}
+
+Header.Frame = function HeaderFrame(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Container, restProps, children);
+};
+
+Header.Logo = function HeaderLogo(_ref3) {
+  var to = _ref3.to,
+      restProps = _objectWithoutProperties(_ref3, ["to"]);
+
+  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, _extends({
+    to: to
+  }, restProps), /*#__PURE__*/_react.default.createElement(_header.Logo, restProps));
+};
+
+Header.ButtonLink = function HeaderButtonLink(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.ButtonLink, restProps, children);
+};
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./styles/header":"src/components/header/styles/header.js"}],"src/components/feature/styles/feature.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SubTitle = exports.Title = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 26px;\n    font-weight: normal;\n    margin: 16px auto;\n    @media (max-width: 600px) {\n        font-size: 18px;\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    max-width: 640px;\n    font-size: 50px;\n    font-weight: 500;\n    margin: auto;\n    @media (max-width: 600px) {\n        font-size: 35px;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    border-bottom: 8px solid #222;\n    text-align: center;\n    padding: 165px 45px;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents.default.div(_templateObject());
+
+exports.Container = Container;
+
+var Title = _styledComponents.default.h1(_templateObject2());
+
+exports.Title = Title;
+
+var SubTitle = _styledComponents.default.h2(_templateObject3());
+
+exports.SubTitle = SubTitle;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/feature/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Feature;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _feature = require("./styles/feature");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Feature(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_feature.Container, restProps, children);
+}
+
+Feature.Title = function FeatureTitle(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_feature.Title, restProps, children);
+};
+
+Feature.SubTitle = function FeatureSubTitle(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_feature.SubTitle, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/feature":"src/components/feature/styles/feature.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37582,6 +37820,18 @@ Object.defineProperty(exports, "OptForm", {
     return _optForm.default;
   }
 });
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function () {
+    return _header.default;
+  }
+});
+Object.defineProperty(exports, "Feature", {
+  enumerable: true,
+  get: function () {
+    return _feature.default;
+  }
+});
 
 var _jumbotron = _interopRequireDefault(require("./jumbotron"));
 
@@ -37591,8 +37841,12 @@ var _accordion = _interopRequireDefault(require("./accordion"));
 
 var _optForm = _interopRequireDefault(require("./opt-form"));
 
+var _header = _interopRequireDefault(require("./header"));
+
+var _feature = _interopRequireDefault(require("./feature"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js"}],"src/fixtures/faqs.json":[function(require,module,exports) {
+},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js"}],"src/fixtures/faqs.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
   "header": "What is Netflix?",
@@ -37635,9 +37889,9 @@ function FaqsContainer() {
     return /*#__PURE__*/_react.default.createElement(_components.Accordion.Item, {
       key: item.id
     }, /*#__PURE__*/_react.default.createElement(_components.Accordion.Header, null, item.header), /*#__PURE__*/_react.default.createElement(_components.Accordion.Body, null, item.body));
-  })), /*#__PURE__*/_react.default.createElement(_components.OptForm, null, /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create or restart your membership."), /*#__PURE__*/_react.default.createElement(_components.OptForm.Input, {
+  })), /*#__PURE__*/_react.default.createElement(_components.OptForm, null, /*#__PURE__*/_react.default.createElement(_components.OptForm.Input, {
     placeholder: "Email address"
-  }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Try it now")));
+  }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Try it now"), /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create or restart your membership.")));
 }
 },{"react":"node_modules/react/index.js","../components":"src/components/index.js","../fixtures/faqs.json":"src/fixtures/faqs.json"}],"src/containers/footer.js":[function(require,module,exports) {
 "use strict";
@@ -37690,7 +37944,52 @@ function FooterContainer() {
     href: "#"
   }, "Legal notices"))), /*#__PURE__*/_react.default.createElement(_components.Footer.Break, null), /*#__PURE__*/_react.default.createElement(_components.Footer.Text, null, "Netflix Madagascar"));
 }
-},{"react":"node_modules/react/index.js","../components":"src/components/index.js"}],"src/fixtures/jumbo.json":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components":"src/components/index.js"}],"src/constants/routes.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SIGN_IN = exports.SIGN_UP = exports.BROWSE = exports.HOME = void 0;
+var HOME = "/";
+exports.HOME = HOME;
+var BROWSE = "/browse";
+exports.BROWSE = BROWSE;
+var SIGN_UP = "/signup";
+exports.SIGN_UP = SIGN_UP;
+var SIGN_IN = "/signin";
+exports.SIGN_IN = SIGN_IN;
+},{}],"src/containers/header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.HeaderContainer = HeaderContainer;
+
+var _react = _interopRequireDefault(require("react"));
+
+var ROUTE = _interopRequireWildcard(require("../constants/routes"));
+
+var _header = _interopRequireDefault(require("../components/header"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function HeaderContainer(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_header.default.Frame, null, /*#__PURE__*/_react.default.createElement(_header.default.Logo, {
+    to: ROUTE.HOME,
+    src: "/images/misc/logo.svg",
+    alt: "Netflix"
+  }), /*#__PURE__*/_react.default.createElement(_header.default.ButtonLink, {
+    to: ROUTE.SIGN_IN
+  }, "Sign in")), children);
+}
+},{"react":"node_modules/react/index.js","../constants/routes":"src/constants/routes.js","../components/header":"src/components/header/index.js"}],"src/fixtures/jumbo.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
   "title": "Enjoy on your TV.",
@@ -37750,36 +38049,27 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _components = require("../components");
+
 var _faqs = _interopRequireDefault(require("../containers/faqs"));
 
 var _footer = _interopRequireDefault(require("../containers/footer"));
+
+var _header = require("../containers/header");
 
 var _jumbotron = _interopRequireDefault(require("../containers/jumbotron"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Home() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.HeaderContainer, null, /*#__PURE__*/_react.default.createElement(_components.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Feature.Title, null, "Unlimited movies. TV shows and more."), /*#__PURE__*/_react.default.createElement(_components.Feature.SubTitle, null, "Watch anywhere. Cancel anytime."), /*#__PURE__*/_react.default.createElement(_components.OptForm, null, /*#__PURE__*/_react.default.createElement(_components.OptForm.Input, {
+    placeholder: "Email address"
+  }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Join the conversation"), /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create or restart your membership.")))), /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
 
 var _default = Home;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../containers/faqs":"src/containers/faqs.js","../containers/footer":"src/containers/footer.js","../containers/jumbotron":"src/containers/jumbotron.js"}],"src/constants/routes.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.SIGN_IN = exports.SIGN_UP = exports.BROWSE = exports.HOME = void 0;
-var HOME = "/";
-exports.HOME = HOME;
-var BROWSE = "/browse";
-exports.BROWSE = BROWSE;
-var SIGN_UP = "/signup";
-exports.SIGN_UP = SIGN_UP;
-var SIGN_IN = "/signin";
-exports.SIGN_IN = SIGN_IN;
-},{}],"src/app.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../containers/faqs":"src/containers/faqs.js","../containers/footer":"src/containers/footer.js","../containers/header":"src/containers/header.js","../containers/jumbotron":"src/containers/jumbotron.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37878,7 +38168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54730" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59977" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
