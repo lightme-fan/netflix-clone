@@ -4,18 +4,19 @@ import { GlobalStyles } from './global-styles';
 import { App } from './app';
 import { FirebaseContext } from './context/firebase';
 
+import { seedDatabase } from './seed'
+
 const config = {
-	apiKey: 'AIzaSyATphOSzKr9848kQ24epRhYP3mMoUy8z6A',
-	authDomain: 'netflix-onja-loic.firebaseapp.com',
-	projectId: 'netflix-onja-loic',
-	storageBucket: 'netflix-onja-loic.appspot.com',
-	messagingSenderId: '396259060342',
-	appId: '1:396259060342:web:2ec8f7b64a83ea0bc48d57',
+	apiKey: "AIzaSyCG0tqY1NyUWTp_gncAyITHIdJMdrNDnNE",
+    authDomain: "netflix-onja-fanilo.firebaseapp.com",
+    projectId: "netflix-onja-fanilo",
+    storageBucket: "netflix-onja-fanilo.appspot.com",
+    messagingSenderId: "642395274797",
+    appId: "1:642395274797:web:ba0fb2ce0433d13d2882a4"
 };
 
-// maybe add databaseUrl inside
-
 const firebase = window.firebase.initializeApp(config);
+seedDatabase(firebase)
 
 ReactDOM.render(
 	<>
