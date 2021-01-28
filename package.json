@@ -1,15 +1,13 @@
 {
 	"name": "project",
 	"dependencies": {
-		"@angular/common": "^6.1.10",
-		"@angular/core": "^6.1.10",
-		"fuse.js": "5.2.3",
+		"dotenv": "^8.2.0",
+		"fuse.js": "^5.2.3",
 		"normalize.css": "8.0.1",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-is": "^17.0.1",
 		"react-router-dom": "^5.2.0",
-		"selectio": "^1.0.0-rc.3",
-		"styled-components": "^5.1.0"
+		"styled-components": "^5.2.1"
 	}
 }
